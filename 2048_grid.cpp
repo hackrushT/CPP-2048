@@ -2,17 +2,29 @@
 #include<vector>
 #include<stdlib.h>
 
+
+/* for displaying numbers in the grid */
+#define disp1(x)    cout << "   " << x << "  "
+#define disp2(x)    cout << "  " << x << "  "
+#define disp3(x)    cout << "  " << x << " "
+#define disp4(x)    cout << " " << x << " "
+#define dispBlank() cout << "      "
+
 using namespace std;
 
-void display(int x)
+void display(unsigned int x)
 {
-    if(x<10&&x!=0)
-        cout<<"  "<<x<<" ";
-    else if(x==0)
-        cout<<"    ";
-    else
-        cout<<x;
-    cout<<" | ";
+    if (x == 0)
+        dispBlank();
+    else if (x < 10)
+        disp1(x);
+    else if (x < 100)
+        disp2(x);
+    else if (x < 1000)
+        disp3(x);
+    else if (x < 10000)
+        disp4(x);
+    cout<<"|";
 
 }
 
@@ -29,11 +41,11 @@ int main()
 
 
 
-    vector<int>v1;
+    vector<int> v1;
 
-    vector<int>v2;
+    vector<int> v2;
 
-    vector<int>v3;
+    vector<int> v3;
 
 
     for(int i=0;i<17;i++)
@@ -70,7 +82,7 @@ int main()
     {
 
 
-        cout<<"\n\n\n\n-----------------------------\n|      |      |      |      |\n| ";
+        cout<<"-----------------------------\n|      |      |      |      |\n|";
 
         for(int i=1;i<=4;i++)
         {
@@ -78,7 +90,7 @@ int main()
         }
 
 
-        cout<<" | \n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n| ";
+        cout<<"\n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n|";
 
         for(int i=5;i<=8;i++)
         {
@@ -87,7 +99,7 @@ int main()
 
 
 
-        cout<<" |\n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n| ";
+        cout<<"\n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n|";
 
         for(int i=9;i<=12;i++)
         {
@@ -95,7 +107,7 @@ int main()
         }
 
 
-        cout<<" |\n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n| ";
+        cout<<"\n|      |      |      |      |\n-----------------------------\n|      |      |      |      |\n|";
 
         for(int i=13;i<=16;i++)
         {
@@ -103,7 +115,7 @@ int main()
         }
 
 
-        cout<<" |\n|      |      |      |      |\n-----------------------------\n\n";
+        cout<<"\n|      |      |      |      |\n-----------------------------\n\n";
 
 
 
